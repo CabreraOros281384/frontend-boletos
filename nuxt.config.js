@@ -1,8 +1,22 @@
+import { fullPathRedirect, rewriteRedirects } from '@nuxtjs/auth/lib/module/defaults'
 import colors from 'vuetify/es5/util/colors'
 
+
 export default {
+    // Otras configuraciones de Nuxt
+
+    css: [
+      'bootstrap/dist/css/bootstrap.css',
+      'bootstrap-vue/dist/bootstrap-vue.css'
+    ],
+  
+    plugins: [
+      { src: '~/plugins/bootstrap-vue.js', ssr: true }
+    ],
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
+   // Otras opciones de configuración de Nuxt
+   buildModules: ['@nuxtjs/bridge', '@nuxtjs/eslint-module'],
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -28,6 +42,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '@/plugins/ui-components.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -35,19 +50,63 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
+  router: {
+    middleware: ['auth']
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+   auth: {
+    redirect: {
+      login: '/login',
+      callback: '/',
+      home: '/'
+    },
+    localStorage: false,
+    resetOnError: true,
+    strategies: {
+      local: {
+        cookie: false,
+        user: {
+          property: 'user'
+        },
+        token: {
+          property: 'token',
+          required: true
+        },
+        endpoints: {
+          login: {
+            url: '/login',
+            method: 'post'
+          },
+          logout: {
+            url: '/logout',
+            method: 'post'
+          },
+          user: false
+        },
+        rewriteRedirects: true,
+        fullPathRedirect: true
+      }
+    }
+  },
+  axios: {
+    baseURL: 'http://localhost:5010/'
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
