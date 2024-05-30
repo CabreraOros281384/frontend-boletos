@@ -91,7 +91,8 @@ export default {
             url: '/logout',
             method: 'post'
           },
-          user: false
+          user: false,
+          viaje: false
         },
         rewriteRedirects: true,
         fullPathRedirect: true

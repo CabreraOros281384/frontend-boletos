@@ -41,7 +41,7 @@
     },
     methods: {
     comprar() {
-      this.$router.push('/tours');
+      this.$router.push('/inicio/tours');
     }
   }
   }

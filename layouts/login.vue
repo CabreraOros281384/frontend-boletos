@@ -57,7 +57,7 @@
     },
     methods: {
     inicio() {
-      this.$router.push('/inicio');
+      this.$router.push('/inicio/inicio');
     },
     login () {
       this.$router.push('/')

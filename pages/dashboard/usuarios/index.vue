@@ -286,7 +286,6 @@
 import { mapState } from 'vuex'
 
 export default {
-  layout: 'dashboard',
   auth: true,
   data () {
     return {

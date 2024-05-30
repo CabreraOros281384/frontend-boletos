@@ -6,7 +6,6 @@
           class="pa-4"
         >
           <v-avatar class="mb-4" color="grey darken-1" size="64" />
-          <div>aqui va publicidad </div>
         </v-sheet>
   
         <v-divider color="green"/>

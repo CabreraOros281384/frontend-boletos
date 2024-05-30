@@ -1,4 +1,5 @@
 export const state = () => ({
+    viaje: null,
     user: null,
     token: null
   })
@@ -9,5 +10,8 @@ export const state = () => ({
     },
     setToken (state, token) {
       state.token = token
+    },
+    setViaje (state, viaje){
+      state.viaje = viaje
     }
   }

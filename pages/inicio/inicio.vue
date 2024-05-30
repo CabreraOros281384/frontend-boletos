@@ -1,12 +1,12 @@
 <template>
     <div>
-    <tours />
+    <inicio />
     </div>
 </template>
 <script>
 
 export default {
-  name: 'toursPages',
+  name: 'Iniciopage',
   layout: 'login',
   auth: false,
 }
