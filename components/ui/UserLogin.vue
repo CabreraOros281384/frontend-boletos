@@ -172,9 +172,13 @@
           data: sendData
         }).then(async (res) => {
           const result = await res.data
+          //console.log(result)
           if (result.message === 'success') {
             this.$store.commit('setToken', result.token)
-            this.$router.push('/dashboard')
+            this.$store.commit('setUser', result.actualUser)
+            //console.log(result.actualUser)
+            //console.log(this.$store.getters.getActualUser)
+            this.$router.push('/inicio/inicio')
           }
         }).catch((err) => {
           console.log('@@@ error => ', err)

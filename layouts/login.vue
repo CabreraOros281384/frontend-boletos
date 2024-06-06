@@ -8,24 +8,15 @@
             </v-btn>
           </li>
           <li><v-btn class="pa-2" color="#e00000" @click="login">
-              <span style="text-transform: none; color: white;">Login</span>
-            </v-btn>
-          </li>
-          <li>
-            <v-btn class="pa-2" color="#e00000" @click="login">
-              <span style="text-transform: none; color: white;">Sevicios</span>
+              <span style="text-transform: none; color: white;">Iniciar Secion</span>
             </v-btn>
           </li>
           <li>
             <v-btn class="pa-2" color="#e00000" @click="empresa">
-              <span style="text-transform: none; color: white;">Acerca de </span>
+              <span style="text-transform: none; color: white;">Historia</span>
             </v-btn>
           </li>
-          <li>
-            <v-btn class="pa-2" color="#e00000" @click="login">
-              <span style="text-transform: none; color: white;">Contacto</span>
-            </v-btn>
-          </li>
+
         </ul>
       </v-row>
       </v-app-bar>

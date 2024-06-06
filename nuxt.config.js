@@ -4,6 +4,12 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
     // Otras configuraciones de Nuxt
+    modules: [
+      'bootstrap-vue/nuxt',
+    ],
+    bootstrapVue: {
+      icons: true // Habilita los iconos
+    },
 
     css: [
       'bootstrap/dist/css/bootstrap.css',
